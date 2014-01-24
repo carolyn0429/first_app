@@ -7,10 +7,12 @@ gem 'rails', '4.0.2'
 gem 'bootstrap-sass'
 
 # Use sqlite3 as the database for Active Record
-#gem 'sqlite3', group:[:development, :test]
-group :development, :test do
+gem 'sqlite3', group:[:development, :test]
+=begin
+group :[:development, :test] do
 	gem 'sqlite3','1.3.4'
 end
+=end
 group :production do
 	gem 'pg','0.12.2'
 end
