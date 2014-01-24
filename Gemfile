@@ -1,4 +1,7 @@
 source 'https://rubygems.org'
+gem 'nokogiri' 
+gem 'rack', '~>1.1' 
+gem 'rspec', :require => 'spec'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.2'
@@ -7,7 +10,15 @@ gem 'rails', '4.0.2'
 gem 'bootstrap-sass'
 
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+#gem 'sqlite3', group:[:development, :test]
+group :development, :test do
+	gem 'sqlite3','1.3.4'
+end
+group :production do
+	gem 'pg','0.12.2'
+end
+#gem 'pg', group::production
+#gem 'rails_12factor', group::production
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
